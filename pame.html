@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container"
+    style="flex-direction: row;
+    justify-content: space-evenly;">
+        <div class="box"></div>
+        <img src="./Assets/ExactaLogo.png"/>
+        <div class="box" id="apagar"></div>
+    </div>
+    <div class="box" id="clique" style="margin-top: 15vh; margin-left:40vw;">
+        Clique aqui!
+    </div>
+
+    <script>
+        const boxClique = document.querySelector("#clique");
+        const boxApagar = document.querySelector("#apagar")
+        boxClique.addEventListener("click", function(){
+            boxClique.style.backgroundColor = "blue";
+            boxClique.innerText = "Cliquei!"
+
+            setTimeout(function(){
+                boxClique.style.backgroundColor = "grey";
+                boxClique.innerText = "Clique aqui!"
+            },1000)
+        })
+
+        boxApagar.addEventListener("mouseenter",function(){
+            boxApagar.style.opacity = "0.0"
+        })
+
+        boxApagar.addEventListener("mouseleave",function(){
+            boxApagar.style.opacity = "1.0";
+        })
+    </script>
+</body>
+</html>
